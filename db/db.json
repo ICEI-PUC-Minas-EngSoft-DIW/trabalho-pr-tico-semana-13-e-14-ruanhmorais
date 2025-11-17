@@ -14,5 +14,203 @@
       "nome": "Usuario Comum",
       "email": "user@abc.com"
     }
+  ],
+  "carreira": [
+    {
+      "titulo": "Manchester United (2003-2009)",
+      "descricao": "Onde o mundo o conheceu.",
+      "imagem": "assets/img/manunit.jpg",
+      "categoria": "Clubes",
+      "periodo": "2003-2009",
+      "titulos": "3x Premier League, 1x Champions League, 1x Bola de Ouro",
+      "gols": "118 gols em 292 jogos",
+      "conteudo": "Cristiano Ronaldo chegou ao Manchester United em 2003, vindo do Sporting CP por cerca de 12 milhões de libras. Sob o comando de Sir Alex Ferguson, CR7 se transformou de um jovem talentoso em uma superestrela mundial. Durante sua passagem pelos Red Devils, conquistou 3 títulos da Premier League, 1 Liga dos Campeões da UEFA (2008), 1 Copa do Mundo de Clubes da FIFA, 1 Copa da Inglaterra e 2 Copas da Liga Inglesa. Em 2008, ganhou sua primeira Bola de Ouro, marcando 42 gols naquela temporada memorável. Seu número 7 se tornou icônico e sua habilidade de driblar, velocidade e finalizações espetaculares encantaram os torcedores ao redor do mundo!",
+      "destaque": true,
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Gol de falta vs Portsmouth (2008)",
+          "imagem": "assets/img/manutd_falta.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Final da Champions (2008)",
+          "imagem": "assets/img/manutd_champions.jpg"
+        },
+        {
+          "id_momento": 3,
+          "nome": "Primeiro Hat-Trick (2008)",
+          "imagem": "assets/img/manutd_hattrick.jpg"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Real Madrid (2009-2018)",
+      "descricao": "A era de ouro.",
+      "conteudo": "Em 2009, Cristiano Ronaldo foi transferido para o Real Madrid por uma taxa recorde de 94 milhões de euros, tornando-se o jogador mais caro do mundo na época. Durante 9 temporadas no Santiago Bernabéu, CR7 estabeleceu recordes que pareciam impossíveis. Conquistou 4 Champions League (2014, 2016, 2017, 2018), sendo o primeiro jogador a vencer o torneio em 3 anos consecutivos na era moderna. Ganhou 2 títulos de La Liga, 2 Copas del Rey, e 4 Bolas de Ouro adicionais (2013, 2014, 2016, 2017). Tornou-se o maior artilheiro da história do clube com 451 gols em 438 jogos - uma média impressionante de mais de 1 gol por jogo. Estabeleceu o recorde de mais gols em uma única temporada de La Liga (48 gols em 2014-15) e se tornou o maior artilheiro da história da Champions League.",
+      "categoria": "Clubes",
+      "periodo": "2009-2018",
+      "titulos": "4x Champions League, 2x La Liga, 4x Bola de Ouro",
+      "gols": "451 gols em 438 jogos",
+      "destaque": true,
+      "imagem": "assets/img/real.png",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Gol de Bicicleta vs Juventus (2018)",
+          "imagem": "assets/img/real_bike.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "La Décima (2014)",
+          "imagem": "assets/img/real_decima.jpg"
+        },
+        {
+          "id_momento": 3,
+          "nome": "Calma, calma (2012)",
+          "imagem": "assets/img/real_calma.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Seleção Portuguesa",
+      "descricao": "Liderando Portugal à glória.",
+      "conteudo": "Cristiano Ronaldo estreou pela Seleção Portuguesa em 2003 e se tornou o jogador com mais jogos e mais gols na história das seleções nacionais. Capitão de Portugal desde 2008, liderou seu país à conquista inédita da Eurocopa 2016, vencendo a França na final em Paris. Em 2019, conquistou a UEFA Nations League, o segundo título importante de Portugal. CR7 participou de 5 Copas do Mundo (2006, 2010, 2014, 2018, 2022) e 5 Eurocopas (2004, 2008, 2012, 2016, 2020), sendo o único jogador a marcar em 5 edições diferentes da Copa do Mundo. Com mais de 200 jogos e 130+ gols pela seleção, é considerado o maior jogador da história de Portugal e inspiração para gerações de portugueses.",
+      "categoria": "Seleção",
+      "periodo": "2003-Presente",
+      "titulos": "1x Eurocopa, 1x UEFA Nations League",
+      "gols": "130+ gols em 200+ jogos",
+      "destaque": true,
+      "imagem": "assets/img/manunit1.png",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Vitória na Euro 2016",
+          "imagem": "assets/img/selecao_euro.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Hat-Trick vs Espanha (Copa 2018)",
+          "imagem": "assets/img/selecao_espanha.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Al Nassr (2023-Presente)",
+      "descricao": "Novos caminhos.",
+      "conteudo": "Em janeiro de 2023, Cristiano Ronaldo iniciou um novo capítulo em sua carreira ao assinar com o Al Nassr, da Arábia Saudita. O contrato, válido até 2025, fez dele um dos atletas mais bem pagos do mundo. CR7 trouxe não apenas seu talento incomparável, mas também uma visibilidade global sem precedentes para o futebol saudita. Sua presença inspirou outros grandes jogadores a se juntarem à Saudi Pro League, elevando o nível da competição. No Al Nassr, Ronaldo continua demonstrando sua capacidade de adaptação e mentalidade vencedora, marcando gols regularmente e liderando o time como capitão. Aos 38 anos, prova que a idade é apenas um número quando se trata de determinação e amor pelo futebol.",
+      "categoria": "Clubes",
+      "periodo": "2023-Presente",
+      "titulos": "Em busca de novos títulos",
+      "gols": "Continua marcando...",
+      "destaque": false,
+      "imagem": "assets/img/alnassr1.jpg",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Apresentação Oficial",
+          "imagem": "assets/img/alnassr_apresentacao.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Primeiro Título (Copa dos Campeões Árabes)",
+          "imagem": "assets/img/alnassr_titulo.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Gols na Carreira",
+      "descricao": "Recorde histórico de gols marcados.",
+      "conteudo": "Cristiano Ronaldo é o maior artilheiro de todos os tempos no futebol internacional. Com mais de 940 gols marcados em partidas oficiais, ele superou lendas como Pelé e Messi. Seus gols foram marcados em diversos campeonatos: Premier League, La Liga, Serie A, Champions League, Copa do Mundo, Eurocopa e muitos outros. Sua capacidade de marcar gols em diferentes fases da carreira, com diferentes equipes e em diferentes ligas, o consolida como o maior artilheiro da história do futebol.",
+      "categoria": "Recordes",
+      "periodo": "2003-Presente",
+      "titulos": "940+ gols em carreira",
+      "gols": "Maior artilheiro da história",
+      "destaque": false,
+      "imagem": "assets/img/cr7comemorando.jpeg",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Comemoração 'Siii'",
+          "imagem": "assets/img/gols_sii.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Gol 700",
+          "imagem": "assets/img/gols_700.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Principais Títulos",
+      "descricao": "Colecionador de troféus internacionais.",
+      "conteudo": "Cristiano Ronaldo conquistou praticamente todos os troféus possíveis no futebol. Ganhou 5 vezes a Champions League (a competição de clubes mais prestigiosa do mundo), sendo o jogador mais importante em várias dessas conquistas. Venceu a Eurocopa 2016 pela Seleção Portuguesa em um feito histórico. Conquistou múltiplos títulos de campeonatos nacionais: Premier League, La Liga, Serie A. Além disso, ganhou a Copa do Mundo de Clubes da FIFA, várias Copas da Liga Inglesa, Copas del Rey e muitos outros. Seus troféus cobrem praticamente todas as competições importantes do futebol mundial.",
+      "categoria": "Troféus",
+      "periodo": "2003-2025",
+      "titulos": "5x Champions, 1x Eurocopa, 3x Premier League, 2x La Liga",
+      "gols": "Conquistador de 35+ títulos",
+      "destaque": false,
+      "imagem": "assets/img/cr7champions.jpeg",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Taça da Champions (ManUtd)",
+          "imagem": "assets/img/titulos_champions_manu.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Taça da Champions (Real)",
+          "imagem": "assets/img/titulos_champions_real.jpg"
+        },
+        {
+          "id_momento": 3,
+          "nome": "Taça da Eurocopa (Portugal)",
+          "imagem": "assets/img/titulos_euro.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Recordes Individuais",
+      "descricao": "Detentor de múltiplos recordes históricos.",
+      "conteudo": "Cristiano Ronaldo é o detentor de inúmeros recordes individuais que provavelmente nunca serão quebrados. É o maior artilheiro da Champions League com mais de 140 gols na competição. É o jogador com mais gols pela seleção em toda a história das Copas do Mundo. Ganhou 5 vezes a Bola de Ouro, prêmio dado ao melhor jogador do mundo. É o maior artilheiro do Real Madrid, sua casa por 9 anos. Estabeleceu recordes de gols em uma única temporada de La Liga. Foi eleito melhor jogador europeu múltiplas vezes. Todos esses recordes consolidam CR7 como um dos maiores atletas da história do esporte.",
+      "categoria": "Recordes",
+      "periodo": "2003-Presente",
+      "titulos": "140+ gols Champions, 5x Bola de Ouro",
+      "gols": "Inúmeros recordes mundiais",
+      "destaque": false,
+      "imagem": "assets/img/cr7boladeouro.jpeg",
+      "momentos_iconicos": [
+        {
+          "id_momento": 1,
+          "nome": "Bola de Ouro 2008",
+          "imagem": "assets/img/recorde_bola_2008.jpg"
+        },
+        {
+          "id_momento": 2,
+          "nome": "Bola de Ouro 2017",
+          "imagem": "assets/img/recorde_bola_2017.jpg"
+        }
+      ]
+    },
+    {
+      "titulo": "Juventus (2018-2021)",
+      "descricao": "Desafio na Itália.",
+      "imagem": "assets/img/juventus.png",
+      "categoria": "Clubes",
+      "periodo": "2018-2021",
+      "titulos": "2x Serie A, 1x Coppa Italia, 2x Supercoppa Italiana",
+      "gols": "101",
+      "conteudo": "Em 2018, Cristiano Ronaldo chocou o mundo ao se transferir para a Juventus, buscando novos desafios no futebol italiano. Em Turim, ele rapidamente se tornou o líder da equipe, conquistando dois títulos da Serie A (Scudetto) e se tornando o primeiro jogador a marcar 100 gols pelo clube em apenas três temporadas. Sua passagem pela Itália solidificou ainda mais seu status como um dos maiores artilheiros de todos os tempos.",
+      "destaque": false,
+      "momentos_iconicos": [],
+      "id": 8
+    }
   ]
 }
