@@ -211,6 +211,19 @@
       "destaque": false,
       "momentos_iconicos": [],
       "id": 8
+    },
+    {
+      "titulo": "Bola de Ouro (2013)",
+      "descricao": "Segunda Bola de Ouro da carreira.",
+      "imagem": "assets/img/bola_ouro_2013.jpg",
+      "categoria": "Prêmios Pessoais",
+      "periodo": "2013",
+      "titulos": "Bola de ouro",
+      "gols": "",
+      "conteudo": "Em 2013, Cristiano Ronaldo venceu sua segunda Bola de Ouro, a primeira pelo Real Madrid, após uma temporada espetacular onde marcou 69 gols. Este prêmio marcou seu retorno ao topo do futebol mundial após quatro anos.",
+      "destaque": false,
+      "momentos_iconicos": [],
+      "id": 9
     }
   ]
 }

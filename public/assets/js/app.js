@@ -1,3 +1,18 @@
+// Função para carregar o menu de navegação dinamicamente
+function carregarMenu() {
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+        nav.innerHTML = `
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="graficos.html">Gráficos</a></li>
+                <li><a href="index.html#carreira">Carreira</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        `;
+    }
+}
+
 // URL base da API
 const API_URL = '/carreira';
 
@@ -201,24 +216,6 @@ async function carregarDetalhes() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.getElementById('detalhes-content')) {
-        // Página detalhes.html
-        carregarDetalhes();
-    } else if (document.getElementById('carousel-inner')) {
-        // Página index.html
-        carregarDestaques();
-        carregarCards();
-    } else if (document.getElementById('cadastro-form')) {
-        // Página cadastro_carreira.html
-        document.getElementById('cadastro-form').addEventListener('submit', cadastrarItem);
-    } else if (document.getElementById('editar-form')) {
-        // Página editar_carreira.html
-        carregarDadosParaEdicao(); // <-- Preenche o formulário
-        document.getElementById('editar-form').addEventListener('submit', editarItem); // <-- Salva ao enviar
-    }
-});
-
 // Função para lidar com o cadastro de um novo item
 async function cadastrarItem(event) {
     event.preventDefault();
@@ -286,7 +283,6 @@ async function excluirItem(id) {
 
 // Função para PREENCHER o formulário de edição
 async function carregarDadosParaEdicao() {
-    // 1. Pegar o ID da URL (ex: ?id=3)
     const urlParams = new URLSearchParams(window.location.search);
     const id = parseInt(urlParams.get('id'));
 
@@ -296,7 +292,6 @@ async function carregarDadosParaEdicao() {
         return;
     }
 
-    // 2. Buscar os dados desse item específico na API
     try {
         const response = await fetch(`${API_URL}/${id}`);
         if (!response.ok) {
@@ -304,7 +299,6 @@ async function carregarDadosParaEdicao() {
         }
         const item = await response.json();
 
-        // 3. Preencher cada campo do formulário com os dados do item
         document.getElementById('titulo').value = item.titulo;
         document.getElementById('descricao').value = item.descricao;
         document.getElementById('imagem').value = item.imagem;
@@ -322,13 +316,22 @@ async function carregarDadosParaEdicao() {
 
 // Função para SALVAR as alterações (PUT)
 async function editarItem(event) {
-    event.preventDefault(); // Prevenir recarregamento da página
+    event.preventDefault(); 
 
-    // 1. Pegar o ID da URL
     const urlParams = new URLSearchParams(window.location.search);
     const id = parseInt(urlParams.get('id'));
 
-    // 2. Coletar os dados ATUALIZADOS do formulário
+    // Busca os dados originais para não perder o 'destaque' e 'momentos_iconicos'
+    let dadosOriginais;
+    try {
+        const res = await fetch(`${API_URL}/${id}`);
+        dadosOriginais = await res.json();
+    } catch (error) {
+        console.error('Erro ao buscar dados originais para salvar:', error);
+        alert('Falha ao salvar. Não foi possível ler os dados originais.');
+        return;
+    }
+
     const itemAtualizado = {
         titulo: document.getElementById('titulo').value,
         descricao: document.getElementById('descricao').value,
@@ -338,17 +341,13 @@ async function editarItem(event) {
         titulos: document.getElementById('titulos').value,
         gols: document.getElementById('gols').value,
         conteudo: document.getElementById('conteudo').value,
-        // (Manter os dados que não estão no formulário, se necessário)
-        // (Buscando o item original para não perder 'destaque' e 'momentos_iconicos')
-        destaque: (await (await fetch(`${API_URL}/${id}`)).json()).destaque,
-        momentos_iconicos: (await (await fetch(`${API_URL}/${id}`)).json()).momentos_iconicos
+        destaque: dadosOriginais.destaque, // Mantém o valor original
+        momentos_iconicos: dadosOriginais.momentos_iconicos // Mantém o valor original
     };
 
-
-    // 3. Enviar os dados para a API (método PUT)
     try {
         const response = await fetch(`${API_URL}/${id}`, {
-            method: 'PUT', // PUT = Substituição completa do recurso
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -359,7 +358,6 @@ async function editarItem(event) {
             throw new Error('Erro ao atualizar item');
         }
 
-        // 4. Se deu certo, avisar e redirecionar
         alert('Item atualizado com sucesso!');
         window.location.href = 'index.html';
 
@@ -368,3 +366,90 @@ async function editarItem(event) {
         alert('Falha ao atualizar o item. Verifique o console.');
     }
 }
+
+// Função para carregar o gráfico de categorias
+async function carregarGraficoCategorias() {
+    const ctx = document.getElementById('graficoCategorias');
+    if (!ctx) return; 
+
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error('Erro ao buscar dados');
+        const data = await response.json();
+
+        const contagem = {};
+        data.forEach(item => {
+            const categoria = item.categoria || 'Sem Categoria';
+            contagem[categoria] = (contagem[categoria] || 0) + 1;
+        });
+        
+        const labels = Object.keys(contagem); 
+        const dataPoints = Object.values(contagem);
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Itens por Categoria',
+                    data: dataPoints,
+                    backgroundColor: [
+                        'rgba(255, 206, 86, 0.8)', // Amarelo
+                        'rgba(54, 162, 235, 0.8)', // Azul
+                        'rgba(255, 99, 132, 0.8)', // Vermelho
+                        'rgba(75, 192, 192, 0.8)', // Verde
+                        'rgba(153, 102, 255, 0.8)', // Roxo
+                        'rgba(255, 159, 64, 0.8)'  // Laranja
+                    ],
+                    borderColor: 'rgba(40, 40, 40, 0.5)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#FFFFFF' // Cor dos labels (branco)
+                        }
+                    }
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Erro ao carregar gráfico:', error);
+        ctx.getContext('2d').fillStyle = 'red';
+        ctx.getContext('2d').font = '16px Arial';
+        ctx.getContext('2d').fillText('Falha ao carregar o gráfico.', 10, 50);
+    }
+}
+
+
+// Gerencia qual função rodar dependendo da página
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Carrega o menu em TODAS as páginas
+    carregarMenu(); 
+
+    // 2. Decide qual função principal rodar
+    if (document.getElementById('detalhes-content')) {
+        // Página detalhes.html
+        carregarDetalhes();
+    } else if (document.getElementById('carousel-inner')) {
+        // Página index.html
+        carregarDestaques();
+        carregarCards();
+    } else if (document.getElementById('cadastro-form')) {
+        // Página cadastro_carreira.html
+        document.getElementById('cadastro-form').addEventListener('submit', cadastrarItem);
+    } else if (document.getElementById('editar-form')) {
+        // Página editar_carreira.html
+        carregarDadosParaEdicao();
+        document.getElementById('editar-form').addEventListener('submit', editarItem);
+    } else if (document.getElementById('graficoCategorias')) {
+        // Página graficos.html
+        carregarGraficoCategorias();
+    }
+});
