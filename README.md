@@ -9,10 +9,10 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Ruan Henrique Rodrigues de Morais
+- Matricula: 902434
+- Proposta de projeto escolhida: Proposta 1 (Carreira de Atleta - Cristiano Ronaldo)
+- Breve descrição sobre seu projeto: Evolução do projeto de CRUD (TP anterior), adicionando uma nova página /graficos.html que consome a API /carreira e utiliza a biblioteca Chart.js para gerar um gráfico de pizza dinâmico, exibindo a distribuição de itens por categoria.
 
 **Print da tela com a implementação**
 
@@ -20,4 +20,8 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 <<  COLOQUE A IMAGEM TELA 1 AQUI >>
 
+![Tela 1](grafico_antes.png)
+
 <<  COLOQUE A IMAGEM TELA 2 AQUI >>
+
+![Tela 1](grafico_depois.png)
