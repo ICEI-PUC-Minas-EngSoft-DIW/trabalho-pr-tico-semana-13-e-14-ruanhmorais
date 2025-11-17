@@ -20,8 +20,8 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 <<  COLOQUE A IMAGEM TELA 1 AQUI >>
 
-![Tela 1](grafico_antes.png)
+![Tela 1](docs/grafico_antes.png)
 
 <<  COLOQUE A IMAGEM TELA 2 AQUI >>
 
-![Tela 1](grafico_depois.png)
+![Tela 1](docs/grafico_depois.png)
